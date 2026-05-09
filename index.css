@@ -782,3 +782,44 @@ background:#2a2a2a;
 }
 
 }
+
+.donate-modal-content{
+direction: rtl;
+text-align: right;
+font-family: 'Vazirmatn', sans-serif;
+}
+
+.crypto-box{
+direction: rtl;
+text-align: right;
+}
+
+.crypto-box > div{
+direction: ltr;
+}
+
+.copy-wallet-btn{
+border: none;
+background: #eee;
+padding: 6px 10px;
+border-radius: 6px;
+cursor: pointer;
+transition: 0.2s;
+}
+
+.copy-wallet-btn:hover{
+background: #ddd;
+}
+
+@media (prefers-color-scheme: dark){
+
+.copy-wallet-btn{
+background: #444;
+color: #fff;
+}
+
+.copy-wallet-btn:hover{
+background: #555;
+}
+
+}
