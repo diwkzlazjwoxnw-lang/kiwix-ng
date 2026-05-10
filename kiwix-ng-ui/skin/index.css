@@ -1,5 +1,6 @@
 /* Kiwix library landing page - modern editorial redesign */
 :root {
+    /* Light theme colors */
     --ink: #1d211f;
     --muted: #66706b;
     --faint: #8e9992;
@@ -13,8 +14,36 @@
     --brand-soft: #d7f1e7;
     --gold: #e9a93a;
     --coral: #e86f4d;
+    --surface: #ffffff;
+    --surface-hover: #fffdf8;
+    --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 249, 239, 0.84));
+    --card-border: rgba(255, 255, 255, 0.72);
+    --card-hover-border: rgba(15, 118, 110, 0.26);
+    --card-shadow: 0 16px 42px rgba(54, 38, 18, 0.10);
+    --card-hover-shadow: 0 28px 64px rgba(54, 38, 18, 0.18);
+    --nav-bg: rgba(255, 252, 245, 0.82);
+    --nav-border: rgba(255, 255, 255, 0.72);
+    --input-bg: rgba(255, 255, 255, 0.86);
+    --input-focus-bg: #ffffff;
+    --hero-text: #fffdf7;
+    --hero-text-muted: rgba(255, 253, 247, 0.82);
+    --hero-text-subtle: rgba(255, 253, 247, 0.78);
+    --hero-overlay: linear-gradient(120deg, rgba(15, 118, 110, 0.94), rgba(14, 84, 80, 0.90));
+    --bg-gradient: linear-gradient(135deg, #fff8ea 0%, #f2e3cb 48%, #dce9df 100%);
+    --bg-radial-1: rgba(15, 118, 110, 0.20);
+    --bg-radial-2: rgba(232, 111, 77, 0.16);
+    --grid-color: rgba(29, 33, 31, 0.035);
     --shadow: 0 24px 70px rgba(54, 38, 18, 0.14);
     --shadow-soft: 0 14px 36px rgba(54, 38, 18, 0.10);
+    --overlay-bg: rgba(19, 26, 23, 0.62);
+    --modal-close-bg: #f4eadb;
+    --crypto-box-bg: #f7efe2;
+    --crypto-box-border: rgba(15, 118, 110, 0.28);
+    --tag-bg: #173f3b;
+    --tag-text: #ffffff;
+    --fade-gradient: linear-gradient(180deg, rgba(245, 234, 215, 0), rgba(245, 234, 215, 0.96));
+    
+    /* Design tokens */
     --radius-xl: 34px;
     --radius-lg: 24px;
     --radius-md: 16px;
@@ -22,12 +51,63 @@
     --font-body: roboto, "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #e8e6e3;
+        --muted: #9ca3a0;
+        --faint: #6b7470;
+        --paper: #1a1d1c;
+        --canvas: #121514;
+        --panel: rgba(26, 29, 28, 0.82);
+        --panel-strong: #1e2120;
+        --line: rgba(255, 255, 255, 0.12);
+        --brand: #2dd4bf;
+        --brand-dark: #14b8a6;
+        --brand-soft: rgba(45, 212, 191, 0.15);
+        --surface: #1e2120;
+        --surface-hover: #242726;
+        --card-bg: linear-gradient(180deg, rgba(30, 33, 32, 0.92), rgba(26, 29, 28, 0.84));
+        --card-border: rgba(255, 255, 255, 0.08);
+        --card-hover-border: rgba(45, 212, 191, 0.26);
+        --card-shadow: 0 16px 42px rgba(0, 0, 0, 0.30);
+        --card-hover-shadow: 0 28px 64px rgba(0, 0, 0, 0.40);
+        --nav-bg: rgba(26, 29, 28, 0.82);
+        --nav-border: rgba(255, 255, 255, 0.08);
+        --input-bg: rgba(30, 33, 32, 0.86);
+        --input-focus-bg: #242726;
+        --hero-overlay: linear-gradient(120deg, rgba(15, 118, 110, 0.96), rgba(10, 70, 66, 0.94));
+        --bg-gradient: linear-gradient(135deg, #1a1d1c 0%, #151817 48%, #1a1f1d 100%);
+        --bg-radial-1: rgba(45, 212, 191, 0.10);
+        --bg-radial-2: rgba(232, 111, 77, 0.08);
+        --grid-color: rgba(255, 255, 255, 0.03);
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.40);
+        --shadow-soft: 0 14px 36px rgba(0, 0, 0, 0.30);
+        --overlay-bg: rgba(0, 0, 0, 0.75);
+        --modal-close-bg: #2a2d2c;
+        --crypto-box-bg: #1a1d1c;
+        --crypto-box-border: rgba(45, 212, 191, 0.28);
+        --tag-bg: #2dd4bf;
+        --tag-text: #0d1413;
+        --fade-gradient: linear-gradient(180deg, rgba(18, 21, 20, 0), rgba(18, 21, 20, 0.96));
+    }
+}
+
+/* Allow manual theme toggle */
+[data-theme="light"] {
+    color-scheme: light;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
 body {
     min-height: 100vh;
     background:
-        radial-gradient(circle at 10% 8%, rgba(15, 118, 110, 0.20), transparent 28rem),
-        radial-gradient(circle at 92% 2%, rgba(232, 111, 77, 0.16), transparent 24rem),
-        linear-gradient(135deg, #fff8ea 0%, #f2e3cb 48%, #dce9df 100%);
+        radial-gradient(circle at 10% 8%, var(--bg-radial-1), transparent 28rem),
+        radial-gradient(circle at 92% 2%, var(--bg-radial-2), transparent 24rem),
+        var(--bg-gradient);
     color: var(--ink);
     font-family: var(--font-body);
 }
@@ -40,8 +120,8 @@ body::before {
     pointer-events: none;
     opacity: 0.36;
     background-image:
-        linear-gradient(rgba(29, 33, 31, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(29, 33, 31, 0.035) 1px, transparent 1px);
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
     background-size: 42px 42px;
     mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
 }
@@ -56,10 +136,10 @@ body::before {
     position: relative;
     overflow: hidden;
     min-height: 310px;
-    border: 1px solid rgba(255, 255, 255, 0.62);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-xl);
     background:
-        linear-gradient(120deg, rgba(15, 118, 110, 0.94), rgba(14, 84, 80, 0.90)),
+        var(--hero-overlay),
         url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.18'%3E%3Cpath d='M20 24h80M20 48h80M20 72h80M20 96h80'/%3E%3Cpath d='M24 20v80M48 20v80M72 20v80M96 20v80'/%3E%3C/g%3E%3C/svg%3E");
     box-shadow: var(--shadow);
 }
@@ -80,7 +160,7 @@ body::before {
     z-index: 1;
     max-width: 770px;
     padding: clamp(34px, 7vw, 78px);
-    color: #fffdf7;
+    color: var(--hero-text);
 }
 
 .heroPanel__visual {
@@ -122,7 +202,7 @@ body::before {
     border: 1px solid rgba(255, 255, 255, 0.30);
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.13);
-    color: #fffdf7;
+    color: var(--hero-text);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24);
     backdrop-filter: blur(12px);
 }
@@ -145,7 +225,7 @@ body::before {
 .heroPanel__eyebrow,
 .donate-eyebrow {
     margin-bottom: 14px;
-    color: rgba(255, 253, 247, 0.78);
+    color: var(--hero-text-subtle);
     font: 700 1.2rem/1 var(--font-body);
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -163,7 +243,7 @@ body::before {
 .heroPanel__copy {
     max-width: 590px;
     margin-top: 22px;
-    color: rgba(255, 253, 247, 0.82);
+    color: var(--hero-text-muted);
     font-size: clamp(1.7rem, 2vw, 2.2rem);
     line-height: 1.5;
 }
@@ -179,9 +259,9 @@ body::before {
     width: min(1180px, calc(100% - 32px));
     margin: -42px auto 32px;
     padding: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--nav-border);
     border-radius: 28px;
-    background: rgba(255, 252, 245, 0.82);
+    background: var(--nav-bg);
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(22px);
 }
@@ -201,7 +281,7 @@ body::before {
     height: 44px;
     border: 1px solid var(--line);
     border-radius: 16px;
-    background: #fffdf8;
+    background: var(--surface-hover);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -247,7 +327,7 @@ body::before {
     height: 48px;
     border: 1px solid var(--line);
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.86);
+    background: var(--input-bg);
     color: var(--ink);
     font: 600 1.4rem/1 var(--font-body);
     outline: none;
@@ -273,7 +353,7 @@ body::before {
 .kiwixSearch:focus {
     border-color: rgba(15, 118, 110, 0.55);
     box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
-    background: #fff;
+    background: var(--input-focus-bg);
 }
 
 .kiwixButton {
@@ -342,17 +422,17 @@ body::before {
     min-height: 326px;
     margin: 14px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--card-border);
     border-radius: var(--tile-border-radius);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 249, 239, 0.84));
-    box-shadow: 0 16px 42px rgba(54, 38, 18, 0.10);
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
     transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
 
 .book__wrapper:hover {
     transform: translateY(-8px) rotate(-0.4deg);
-    border-color: rgba(15, 118, 110, 0.26);
-    box-shadow: 0 28px 64px rgba(54, 38, 18, 0.18);
+    border-color: var(--card-hover-border);
+    box-shadow: var(--card-hover-shadow);
 }
 
 .book__link__wrapper {
@@ -426,8 +506,8 @@ body::before {
     height: 32px;
     padding: 0 9px;
     border-radius: 999px;
-    background: #173f3b;
-    color: #fff;
+    background: var(--tag-bg);
+    color: var(--tag-text);
     font: 900 1rem/1 var(--font-body);
     letter-spacing: 0.08em;
 }
@@ -465,7 +545,7 @@ body::before {
     padding: 12px;
     border-radius: 0;
     background: var(--ink);
-    color: #fff;
+    color: var(--paper);
     cursor: pointer;
     text-decoration: none;
     transition: background 0.2s ease;
@@ -473,7 +553,7 @@ body::before {
 
 .book__download:hover { background: var(--brand); }
 .book__download > img { width: 16px; height: 16px; }
-.book__download > span { color: #fff; font: 800 1.25rem/1 var(--font-body); }
+.book__download > span { color: var(--paper); font: 800 1.25rem/1 var(--font-body); }
 
 .fadeOut {
     position: fixed;
@@ -483,7 +563,7 @@ body::before {
     z-index: 1;
     width: 100%;
     height: 110px;
-    background: linear-gradient(180deg, rgba(245, 234, 215, 0), rgba(245, 234, 215, 0.96));
+    background: var(--fade-gradient);
     pointer-events: none;
 }
 
@@ -554,15 +634,15 @@ body::before {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: rgba(19, 26, 23, 0.62);
+    background: var(--overlay-bg);
     backdrop-filter: blur(12px);
 }
 
 .donate-modal-content {
     position: relative;
+    padding: 3rem 2rem 2rem;
     width: min(460px, 100%);
-    padding: 34px;
-    border: 1px solid rgba(255, 255, 255, 0.64);
+    border: 1px solid var(--card-border);
     border-radius: 28px;
     background: var(--panel-strong);
     color: var(--ink);
@@ -581,19 +661,29 @@ body::before {
 .donate-eyebrow { color: var(--coral); }
 
 .donate-close {
-    position: absolute;
-    top: 14px;
-    right: 16px;
-    width: 36px;
-    height: 36px;
-    border: 0;
-    border-radius: 50%;
-    background: #f4eadb;
-    color: var(--ink);
-    font-size: 2.4rem;
-    line-height: 1;
-    cursor: pointer;
+  position: absolute;
+  top: 14px;
+  left: 16px;            /* RTL layout */
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--modal-close-bg);
+  color: var(--ink);
+
+  font-size: 1.8rem;
+  line-height: 1;
+
+  cursor: pointer;
 }
+
 
 .donate-main {
     display: inline-flex;
@@ -613,16 +703,16 @@ body::before {
 .crypto-box {
     margin-top: 22px;
     padding: 18px;
-    border: 1px dashed rgba(15, 118, 110, 0.28);
+    border: 1px dashed var(--crypto-box-border);
     border-radius: 20px;
-    background: #f7efe2;
+    background: var(--crypto-box-bg);
     word-break: break-all;
 }
 
 .crypto-box h3 { margin-bottom: 8px; font-size: 1.6rem; }
 .crypto-box code { display: block; margin-top: 6px; font-size: 1.25rem; }
 .wallet-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
-.copy-wallet-btn { border: 0; border-radius: 12px; padding: 9px 12px; background: var(--ink); color: #fff; cursor: pointer; }
+.copy-wallet-btn { border: 0; border-radius: 12px; padding: 9px 12px; background: var(--ink); color: var(--paper); cursor: pointer; }
 
 @media screen and (max-width: 1020px) {
     .kiwixNav {
@@ -705,4 +795,3 @@ body::before {
 .copy-wallet-btn{
   font-family: "Vazirmatn", sans-serif;
 }
-
