@@ -1,37 +1,23 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link type="root" href="">
     <title>Welcome to Kiwix Server</title>
-    <link
-      type="text/css"
-      href="/skin/kiwix.css?cacheid=b4e29e64"
-      rel="Stylesheet"
-    />
-    <link
-      type="text/css"
-      href="/skin/index.css?cacheid=ae79e41a"
-      rel="Stylesheet"
-    />
-    <link
-      rel="alternate"
-      type="application/atom+xml"
-      title="Library OPDS Feed"
-      id="headFeedLink"
-      href="/catalog/v2/entries?count=-1"
-    />
+    <link type="text/css" href="/skin/kiwix.css?cacheid=b4e29e64" rel="Stylesheet" />
+    <link type="text/css" href="/skin/index.css?cacheid=ae79e41a" rel="Stylesheet" />
+    <link rel="alternate" type="application/atom+xml" title="Library OPDS Feed" id="headFeedLink" href="/catalog/v2/entries?count=-1" />
     <link rel="search" type="application/opensearchdescription+xml" href="/catalog/searchdescription.xml" />
     <link rel="apple-touch-icon" sizes="180x180" href="/skin/favicon/apple-touch-icon.png?cacheid=f86f8df3">
     <link rel="icon" type="image/png" sizes="32x32" href="/skin/favicon/favicon-32x32.png?cacheid=79ded625">
     <link rel="icon" type="image/png" sizes="16x16" href="/skin/favicon/favicon-16x16.png?cacheid=a986fedc">
     <link rel="manifest" href="/skin/favicon/site.webmanifest?cacheid=bc396efb">
-    <link rel="mask-icon" href="/skin/favicon/safari-pinned-tab.svg?cacheid=8d487e95" color="#5bbad5">
+    <link rel="mask-icon" href="/skin/favicon/safari-pinned-tab.svg?cacheid=8d487e95" color="#1e6b5c">
     <link rel="shortcut icon" href="/skin/favicon/favicon.ico?cacheid=92663314">
-    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileColor" content="#1e6b5c">
     <meta name="msapplication-config" content="/skin/favicon/browserconfig.xml?cacheid=f29a7c4a">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#f4eadb">
     <script type="text/javascript" src="./skin/polyfills.js?cacheid=a0e0343d"></script>
     <script type="module" src="/skin/i18n.js?cacheid=e9a10ac1" defer></script>
     <script type="text/javascript" src="/skin/languages.js?cacheid=d2d6933b" defer></script>
@@ -39,144 +25,144 @@
     <script src="/skin/iso6391To3.js?cacheid=ecde2bb3"></script>
     <script type="text/javascript" src="/skin/index.js?cacheid=e3305ca0" defer></script>
   </head>
-  <style>
-    @font-face {
-      font-family: 'Vazirmatn';
-      src: url('./skin/Vazirmatn-Medium.ttf') format('truetype');
-      font-weight: 500;
-      font-style: normal;
-    }
-  </style>
-  <!-- Floating Donate Button -->
-<button id="donateButton" onclick="openDonateModal()" style="font-family: 'Vazirmatn', sans-serif;">❤️ حمایت مالی</button>
-
-<!-- Donate Modal -->
-<div id="donateModal" class="donate-modal">
-  <div class="donate-modal-content">
-    <span class="donate-close" onclick="closeDonateModal()">&times;</span>
-
-    <h2 style="font-family: 'Vazirmatn', sans-serif;">حمایت مالی از پروژه</h2>
-
-    <p style="font-family: 'Vazirmatn', sans-serif;">این کتابخونه براتون مفید بود؟ کوچک ترین حمایت شما کمک بزرگی در حق ماست.</p>
-
-    <a class="donate-main" href="https://daramet.com/bokhary" target="_blank">
-      <span style="font-family: 'Vazirmatn', sans-serif;">حمایت ریالی از طریق دارمت</span>
-    </a>
-
-    <div class="crypto-box">
-      <h3 style="font-family: 'Vazirmatn', sans-serif;">کیف پول کریپتو</h3>
-      <p style="font-family: 'Vazirmatn', sans-serif;"><b>USDT BEP20:</b></p>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <code id="walletAddress" style="flex: 1; word-break: break-all;">0xDbE82d5D542a8646EA124916F110f4c3583A7a2D</code>
-        <button onclick="copyWalletAddress(event)" class="copy-wallet-btn" title="کپی آدرس کیف پول" style="font-family: 'Vazirmatn', sans-serif;">
-          📋
-        </button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<script>
-function openDonateModal() {
-  document.getElementById("donateModal").style.display = "flex";
-}
-
-function closeDonateModal() {
-  document.getElementById("donateModal").style.display = "none";
-}
-
-function copyWalletAddress(event) {
-  const walletAddress = document.getElementById("walletAddress").textContent;
-  navigator.clipboard.writeText(walletAddress).then(() => {
-    const btn = event.target;
-    const originalText = btn.textContent;
-    btn.textContent = "✓";
-    setTimeout(() => {
-      btn.textContent = originalText;
-    }, 2000);
-  }).catch(err => {
-    alert("Failed to copy: " + err);
-  });
-}
-</script>
-
   <body>
     <noscript>
       <style>
-        .kiwixNav, .kiwixHomeBody, #feedLink, .kiwixfooter {
-          display: none;
-        }
-        html, body {
-          height: 100%;
-        }
+        .appShell, #donateButton, .kiwixfooter { display: none; }
+        html, body { height: 100%; }
         .noScriptLinkContainer {
           position: absolute;
           top: 50%;
           left: 50%;
-          -moz-transform: translateX(-50%) translateY(-50%);
-          -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
-          font-size: 16px;
-          font-family: roboto;
+          transform: translate(-50%, -50%);
+          max-width: 560px;
+          padding: 28px;
+          font: 16px/1.6 sans-serif;
+          text-align: center;
+          background: #fff8ef;
+          border: 1px solid #ead7bd;
+          border-radius: 24px;
         }
       </style>
       <div class="noScriptLinkContainer">
         <span id="noScriptLinkText">This page cannot be accessed if JavaScript is not enabled. Please head over to <a href="/nojs">nojs endpoint.</a></span>
       </div>
     </noscript>
-    <div class='kiwixNav'>
-      <a href="/catalog/v2/entries?count=-1" id="feedLink">
-        <img src="/skin/feed.svg?cacheid=055b333f"
-             class="feedLogo"
-             id="feedLogo"
-             alt="Library OPDS Feed"
-             aria-label="Library OPDS Feed"
-             title="Library OPDS Feed">
-      </a>
-      <a onclick="window.modalUILanguageSelector.show()"
-         alt="Select UI language"
-         aria-label="Select UI language"
-         title="Select UI language">
-        <img src="/skin/langSelector.svg?cacheid=00b59961"
-             id="uiLanguageSelectorButton">
-      </a>
-      <div class="kiwixNav__filters">
-        <div class="kiwixNav__select">
-          <select name="lang" id="languageFilter" class='kiwixNav__kiwixFilter filter'>
-            <option value="" selected>All languages</option>
-          </select>
-        </div>
-        <div class="kiwixNav__select">
-          <select name="category" id="categoryFilter" class='kiwixNav__kiwixFilter filter'>
-            <option value="" selected>All categories</option>
-          </select>
+
+    <button id="donateButton" onclick="openDonateModal()">حمایت مالی</button>
+
+    <div id="donateModal" class="donate-modal" aria-hidden="true">
+      <div class="donate-modal-content" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="donateTitle">
+        <button class="donate-close" onclick="closeDonateModal()" aria-label="Close donate modal">&times;</button>
+        <p class="donate-eyebrow">پشتیبانی از کتابخانه</p>
+        <h2 id="donateTitle">حمایت مالی از پروژه</h2>
+        <p>این کتابخونه براتون مفید بود؟ کوچک ترین حمایت شما کمک بزرگی در حق ماست</p>
+        <a class="donate-main" href="https://daramet.com/bokhary" target="_blank" rel="noopener">حمایت ریالی از طریق دارمت</a>
+        <div class="crypto-box">
+          <h3>کیف پول کریپتو</h3>
+          <p><b>USDT BEP20:</b></p>
+          <div class="wallet-row">
+            <code id="walletAddress">YOUR_WALLET_ADDRESS_HERE</code>
+            <button onclick="copyWalletAddress(event)" class="copy-wallet-btn" title="کپی آدرس کیف پول">کپی</button>
+          </div>
         </div>
       </div>
-      <form id='kiwixSearchForm' class='kiwixNav__SearchForm'>
-        <input type="text" name="q" accesskey="s" placeholder="Search" id="searchFilter" class='kiwixSearch filter'>
-        <span class="kiwixButton tagFilterLabel"></span>
-        <input type="submit" class="kiwixButton kiwixButtonHover" id="searchButton" value="Search"/>
-      </form>
     </div>
-    <div class="kiwixHomeBody">
-      <div class="book__list">
-        <h3 class="kiwixHomeBody__results"></h3>
+
+    <main class="appShell">
+      <section class="heroPanel" aria-label="Library introduction">
+        <div class="heroPanel__content">
+          <p class="heroPanel__eyebrow">Offline knowledge, ready anywhere</p>
+          <h1>Explore your Kiwix library</h1>
+          <p class="heroPanel__copy">Search, filter, preview, and download open knowledge collections from a fast local catalog.</p>
+        </div>
+        <div class="heroPanel__visual" aria-hidden="true">
+          <div class="heroPanel__orb heroPanel__orb--one"></div>
+          <div class="heroPanel__orb heroPanel__orb--two"></div>
+          <div class="heroPanel__card">
+            <span>Local catalog</span>
+            <strong>ZIM</strong>
+          </div>
+        </div>
+      </section>
+
+      <div class="kiwixNav" aria-label="Library controls">
+        <div class="kiwixNav__quickLinks">
+          <a href="/catalog/v2/entries?count=-1" id="feedLink" class="kiwixNav__iconLink">
+            <img src="/skin/feed.svg?cacheid=055b333f" class="feedLogo" id="feedLogo" alt="Library OPDS Feed" aria-label="Library OPDS Feed" title="Library OPDS Feed">
+          </a>
+          <button class="kiwixNav__iconLink" onclick="window.modalUILanguageSelector.show()" aria-label="Select UI language" title="Select UI language" type="button">
+            <img src="/skin/langSelector.svg?cacheid=00b59961" id="uiLanguageSelectorButton" alt="">
+          </button>
+        </div>
+
+        <div class="kiwixNav__filters">
+          <div class="kiwixNav__select">
+            <select name="lang" id="languageFilter" class="kiwixNav__kiwixFilter filter">
+              <option value="" selected>All languages</option>
+            </select>
+          </div>
+          <div class="kiwixNav__select">
+            <select name="category" id="categoryFilter" class="kiwixNav__kiwixFilter filter">
+              <option value="" selected>All categories</option>
+            </select>
+          </div>
+        </div>
+
+        <form id="kiwixSearchForm" class="kiwixNav__SearchForm">
+          <input type="text" name="q" accesskey="s" placeholder="Search" id="searchFilter" class="kiwixSearch filter">
+          <span class="kiwixButton tagFilterLabel"></span>
+          <input type="submit" class="kiwixButton kiwixButtonHover" id="searchButton" value="Search" />
+        </form>
       </div>
-      <div id="fadeOut" class="fadeOut"></div>
-    </div>
-    <div class="loader" style="position: absolute; top: 50%"><div class="loader-spinner"></div></div>
+
+      <section class="kiwixHomeBody" aria-live="polite">
+        <div class="book__list">
+          <h3 class="kiwixHomeBody__results"></h3>
+        </div>
+        <div id="fadeOut" class="fadeOut"></div>
+      </section>
+    </main>
+
+    <div class="loader"><div class="loader-spinner"></div></div>
     <div id="kiwixfooter" class="kiwixfooter">Powered by&nbsp;<a href="https://kiwix.org">Kiwix</a></div>
-  </body>
-  <script>
-    function closeModal() {
-      for(modal of document.getElementsByClassName('modal-wrapper')) {
-        if ( modal.id == "uiLanguageSelector" ) {
-          window.modalUILanguageSelector.close();
-        } else {
-          modal.remove();
+
+    <script>
+      function openDonateModal() {
+        const modal = document.getElementById("donateModal");
+        modal.style.display = "flex";
+        modal.setAttribute("aria-hidden", "false");
+      }
+
+      function closeDonateModal() {
+        const modal = document.getElementById("donateModal");
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+      }
+
+      function copyWalletAddress(event) {
+        const walletAddress = document.getElementById("walletAddress").textContent;
+        navigator.clipboard.writeText(walletAddress).then(() => {
+          const btn = event.target;
+          const originalText = btn.textContent;
+          btn.textContent = "✓";
+          setTimeout(() => {
+            btn.textContent = originalText;
+          }, 2000);
+        }).catch(err => {
+          alert("Failed to copy: " + err);
+        });
+      }
+
+      function closeModal() {
+        for (modal of document.getElementsByClassName('modal-wrapper')) {
+          if (modal.id == "uiLanguageSelector") {
+            window.modalUILanguageSelector.close();
+          } else {
+            modal.remove();
+          }
         }
       }
-    }
-  </script>
+    </script>
+  </body>
 </html>
