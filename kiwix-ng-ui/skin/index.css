@@ -666,3 +666,46 @@ body::before {
         transition-duration: 0.01ms !important;
     }
 }
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Donate Modal RTL */
+.donate-modal-content{
+  direction: rtl;
+  text-align: right;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.donate-modal-content h2,
+.donate-modal-content h3,
+.donate-modal-content p,
+.donate-modal-content a,
+.donate-modal-content button{
+  font-family: "Vazirmatn", sans-serif;
+}
+
+/* wallet row layout */
+.wallet-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* wallet address باید LTR بماند */
+#walletAddress{
+  direction: ltr;
+  unicode-bidi: bidi-override;
+  font-family: monospace;
+}
+
+/* copy button */
+.copy-wallet-btn{
+  font-family: "Vazirmatn", sans-serif;
+}
+
