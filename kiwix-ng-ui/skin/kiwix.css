@@ -69,8 +69,8 @@ body {
   transform: translate(-50%, -50%);
   font-size: 1.6rem;
   background: var(--bg-secondary);
-  padding: 20px 30px;
-  border-radius: var(--radius-md);
+  padding: 1%;
+  border-radius: 100px;
   box-shadow: var(--shadow-lg);
   display: flex;
   align-items: center;
