@@ -17,8 +17,11 @@ jobs:
             -v $(pwd):/output \
             ghcr.io/openzim/zimit \
             zimit \
-            --seeds https://shahvani.com/ \
+            --workers 10 \
+            --seeds https://shahvani.com/,https://shahvani.com/dastans \
             --name shahvani-website \
+            --waitUntil domcontentloaded \
+            --scopeExcludeRx="(\?q=|signup-landing\?|\?cid=)" \
             --output /output
 
       - name: Upload ZIM
