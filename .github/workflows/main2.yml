@@ -1,0 +1,19 @@
+name: DailyTests2
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  run:
+    runs-on: [ubuntu-24.04]
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+
+      - name: build zimit image
+        run: docker build -t local-zimit .
+
+      - name: run crawl of test website
+        run: docker run -v $PWD/output:/output local-zimit zimit --seeds https://shahvani.com/ --name shahvani-website --zim-file shahvani.zim
