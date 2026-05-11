@@ -20,3 +20,9 @@ jobs:
             --seeds https://shahvani.com/ \
             --name shahvani-website \
             --output /output
+
+      - name: Upload ZIM
+        uses: actions/upload-artifact@v4
+        with:
+          name: shahvani-zim
+          path: "*.zim"
