@@ -13,4 +13,4 @@ jobs:
         uses: actions/checkout@v6
 
       - name: run crawl of test website
-        run: docker run -v ghcr.io/openzim/zimit local-zimit zimit --seeds https://shahvani.com/ --name shahvani-website --zim-file shahvani.zim
+        run: docker run -v $(pwd):/output ghcr.io/openzim/zimit zimit --seeds https://shahvani.com/ --name shahvani-website --output /output/shahvani.zim
